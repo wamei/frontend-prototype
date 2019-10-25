@@ -8,14 +8,20 @@
 <script lang="ts">
 import Vue from "vue";
 
-import LoginForm from '@/components/molecules/LoginForm.vue';
+import LoginForm, { ISubmitArgs } from '@/components/molecules/LoginForm.vue';
 
 export default Vue.extend({
   components: {
     LoginForm,
   },
+  data() {
+    return {
+      id: '',
+      password: '',
+    };
+  },
   methods: {
-    login({ id, password }) {
+    login({ id, password }: ISubmitArgs) {
       this.$store.dispatch('context/login', {
         id: id,
         password: password,

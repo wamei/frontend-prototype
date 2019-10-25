@@ -12,23 +12,35 @@ import Vue from "vue";
 import MyButton from '@/components/atoms/MyButton.vue';
 import TextInput from '@/components/atoms/TextInput.vue';
 
+export interface ISubmitArgs {
+  id: string;
+  password: string;
+}
+
 export default Vue.extend({
   components: {
     MyButton,
     TextInput,
   },
+  data() {
+    return {
+      id: '',
+      password: '',
+    };
+  },
   methods: {
-    onChangeId(id) {
+    onChangeId(id: string) {
       this.id = id;
     },
-    onChangePassword(password) {
+    onChangePassword(password: string) {
       this.password = password;
     },
     onSubmit() {
-      this.$emit('submit', {
+      const args: ISubmitArgs = {
         id: this.id,
         password: this.password,
-      });
+      };
+      this.$emit('submit', args);
     },
   }
 });

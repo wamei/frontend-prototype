@@ -35,7 +35,7 @@ export default Vue.extend({
     },
   },
   methods: {
-    onChangeName(name) {
+    onChangeName(name: string) {
       this.nameData = name;
     },
     async changeName() {
