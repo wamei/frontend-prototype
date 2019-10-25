@@ -1,4 +1,4 @@
-import Identifier from './Identifier';
+import Identifier from "./Identifier";
 
 export default class Entity<T extends Identifier<any>> {
   id: T;

@@ -10,18 +10,18 @@ const routes = [
   {
     path: "/",
     name: "home",
-    component: () => import('./views/Home.vue'),
+    component: () => import("./views/Home.vue")
   },
   {
     path: "/user",
     name: "user",
-    component: () => import('./views/User.vue'),
-    meta: { requireAuth: true },
+    component: () => import("./views/User.vue"),
+    meta: { requireAuth: true }
   },
   {
     path: "/login",
     name: "login",
-    component: () => import('./views/Login.vue'),
+    component: () => import("./views/Login.vue")
   }
 ];
 
@@ -34,16 +34,16 @@ const router = new VueRouter({
 router.beforeEach(async (to, from, next) => {
   if (from.name === null) {
     try {
-      await store.dispatch('context/autoLogin');
+      await store.dispatch("context/autoLogin");
     } catch {
       // do nothing
     }
   }
-  if (store.state.context.isLogin && to.name == 'login') {
-    next({ name: 'home' });
+  if (store.state.context.isLogin && to.name == "login") {
+    next({ name: "home" });
     return;
   } else if (!store.state.context.isLogin && to.meta.requireAuth === true) {
-    next({ name: 'login' });
+    next({ name: "login" });
     return;
   }
   next();

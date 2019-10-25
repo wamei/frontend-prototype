@@ -1,5 +1,10 @@
 <template>
-  <input type="text" v-model="text" :placeholder="placeholder" @input="onChange" />
+  <input
+    type="text"
+    v-model="text"
+    :placeholder="placeholder"
+    @input="onChange"
+  />
 </template>
 
 <script lang="ts">
@@ -7,17 +12,17 @@ import Vue from "vue";
 export default Vue.extend({
   data() {
     return {
-      text: '',
+      text: ""
     };
   },
   props: {
     value: {
       type: String,
-      default: '',
+      default: ""
     },
     placeholder: {
-      type: String,
-    },
+      type: String
+    }
   },
   mounted() {
     this.text = this.value;

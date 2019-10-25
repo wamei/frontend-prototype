@@ -9,8 +9,8 @@
 <script lang="ts">
 import Vue from "vue";
 
-import MyButton from '@/components/atoms/MyButton.vue';
-import TextInput from '@/components/atoms/TextInput.vue';
+import MyButton from "@/components/atoms/MyButton.vue";
+import TextInput from "@/components/atoms/TextInput.vue";
 
 export interface ISubmitArgs {
   id: string;
@@ -20,12 +20,12 @@ export interface ISubmitArgs {
 export default Vue.extend({
   components: {
     MyButton,
-    TextInput,
+    TextInput
   },
   data() {
     return {
-      id: '',
-      password: '',
+      id: "",
+      password: ""
     };
   },
   methods: {
@@ -38,10 +38,10 @@ export default Vue.extend({
     onSubmit() {
       const args: ISubmitArgs = {
         id: this.id,
-        password: this.password,
+        password: this.password
       };
-      this.$emit('submit', args);
-    },
+      this.$emit("submit", args);
+    }
   }
 });
 </script>

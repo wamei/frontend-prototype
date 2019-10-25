@@ -1,5 +1,3 @@
-import Identifier from './Identifier';
+import Identifier from "./Identifier";
 
-export default class AuthenticationId extends Identifier<string> {
-}
-
+export default class AuthenticationId extends Identifier<string> {}

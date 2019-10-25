@@ -6,7 +6,7 @@ describe("MyButton.vue", () => {
     const msg = "new message";
     const wrapper = shallowMount(MyButton, {
       slots: {
-        default: msg,
+        default: msg
       }
     });
     expect(wrapper.text()).toMatch(msg);

@@ -1,5 +1,5 @@
-import Entity from './Entity';
-import UserId from './UserId';
+import Entity from "./Entity";
+import UserId from "./UserId";
 
 export interface IUserArgs {
   id: UserId;
@@ -27,9 +27,9 @@ export default class User extends Entity<UserId> {
   static createNullUser() {
     return new User({
       id: new UserId(0),
-      name: '',
-      email: '',
-      password: '',
+      name: "",
+      email: "",
+      password: ""
     });
   }
 }

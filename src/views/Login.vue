@@ -8,31 +8,32 @@
 <script lang="ts">
 import Vue from "vue";
 
-import LoginForm, { ISubmitArgs } from '@/components/molecules/LoginForm.vue';
+import LoginForm, { ISubmitArgs } from "@/components/molecules/LoginForm.vue";
 
 export default Vue.extend({
   components: {
-    LoginForm,
+    LoginForm
   },
   data() {
     return {
-      id: '',
-      password: '',
+      id: "",
+      password: ""
     };
   },
   methods: {
     login({ id, password }: ISubmitArgs) {
-      this.$store.dispatch('context/login', {
-        id: id,
-        password: password,
-      })
-          .then(() => {
-            this.$router.push({ name: 'user' });
-          })
-          .catch((error) => {
-            alert(error.message);
-          });
-    },
+      this.$store
+        .dispatch("context/login", {
+          id: id,
+          password: password
+        })
+        .then(() => {
+          this.$router.push({ name: "user" });
+        })
+        .catch(error => {
+          alert(error.message);
+        });
+    }
   }
 });
 </script>

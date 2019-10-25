@@ -1,4 +1,3 @@
-import Identifier from './Identifier';
+import Identifier from "./Identifier";
 
-export default class UserId extends Identifier<number> {
-}
+export default class UserId extends Identifier<number> {}
