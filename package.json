@@ -3,8 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "serve": "TARGET_APP=web vue-cli-service serve",
+    "build:web": "TARGET_APP=web vue-cli-service build",
+    "build:windows": "TARGET_APP=windows vue-cli-service build",
+    "build:ios": "TARGET_APP=ios vue-cli-service build",
+    "build:android": "TARGET_APP=android vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint",
     "storybook:build": "vue-cli-service storybook:build -c config/storybook",
